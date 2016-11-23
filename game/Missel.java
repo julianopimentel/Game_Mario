@@ -19,7 +19,7 @@ public class Missel {
 		
 		this.x = x;
 		this.y = y;
-		ImageIcon referencia = new ImageIcon("src/imagem/fogo.gif");
+		ImageIcon referencia = new ImageIcon("src/Game_Mario/imagem/fogo.gif");
 		imagem = referencia.getImage();
 		
 		this.largura = imagem.getWidth(null);

@@ -43,7 +43,7 @@ public class Fase extends JPanel implements ActionListener {
         private int vidas;    
         
         
-        String musica = "src/imagem/overworld.mid";
+        String musica = "src/Game_Mario/imagem/overworld.mid";
                    
         public void setNomeJogador(String jogador){
             this.nome = jogador;
@@ -82,7 +82,7 @@ public class Fase extends JPanel implements ActionListener {
 		setFocusable(true);
 		setDoubleBuffered(true);
 		addKeyListener(new TecladoAdapter());
-		ImageIcon referencia = new ImageIcon("src/imagem/fundoprincipal.png");
+		ImageIcon referencia = new ImageIcon("src/Game_Mario/imagem/fundoprincipal.png");
                 nome = new String();    
 		fundo = referencia.getImage();
                 vidas = 3;
@@ -148,7 +148,7 @@ public class Fase extends JPanel implements ActionListener {
                         graficos.drawString("C - Continuar", 1060, 560);
                         graficos.drawString("S - Salvar", 560, 560);
                     
-			ImageIcon fimJogo= new ImageIcon("src/imagem/game1.png");
+			ImageIcon fimJogo= new ImageIcon("src/Game_Mario/imagem/game1.png");
 			graficos.drawImage(fimJogo.getImage(), 280, 150,null);
                         
                         run = false;

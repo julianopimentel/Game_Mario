@@ -71,7 +71,7 @@ public class TelaMenu extends JPanel {
 
 		this.pnJogadores2.add(this.pnJogadores);
 
-		this.imagem = new ImageIcon("src/Imagem/fundo-mario.jpg");
+		this.imagem = new ImageIcon("src/Game_Mario/Imagem/fundo-mario.jpg");
 		this.btNovoJogo = new JButton("Novo Jogo");
 		this.btNovoJogo.setSize(40, 50);
 		this.btNovoJogo.setToolTipText("Inicie um novo jogo");

@@ -20,7 +20,7 @@ public class Sonic {
 	private List<Missel> misseis;
 	
 	public Sonic(){
-		ImageIcon referencia = new ImageIcon("src/imagem/mario.gif");
+		ImageIcon referencia = new ImageIcon("src/Game_Mario/imagem/mario.gif");
 		imagem = referencia.getImage();
                
                 
