@@ -1,4 +1,4 @@
-package modelo;
+package Game_Mario.modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import factory.Conexao;
+import Game_Mario.factory.Conexao;
 
 public class DAOJogador {
 	public DAOJogador() {

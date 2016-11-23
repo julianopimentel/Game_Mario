@@ -1,6 +1,6 @@
-package principal;
+package Game_Mario.principal;
 
-import controle.Controle;
+import Game_Mario.controle.Controle;
 
 public class Start {
 	public static void main(String[] args) {

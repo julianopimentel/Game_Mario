@@ -1,4 +1,4 @@
-package game;
+package Game_Mario.game;
 
 import java.awt.Image;
 import java.awt.Rectangle;

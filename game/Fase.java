@@ -1,4 +1,4 @@
-package game;
+package Game_Mario.game;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,13 +17,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import modelo.Jogador;
-import controle.Controle;
-import game.Musica;
+import Game_Mario.modelo.Jogador;
+import Game_Mario.controle.Controle;
 
 import java.awt.image.BufferedImage;
-import visao.TelaGame;
-import visao.TelaPrincipal;
+import Game_Mario.visao.TelaGame;
+import Game_Mario.visao.TelaPrincipal;
 
 public class Fase extends JPanel implements ActionListener {
 
@@ -259,12 +258,12 @@ public class Fase extends JPanel implements ActionListener {
                                 }
                        }
                        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){                                                
-                           controle.cancelaJogo();
+                           //controle.cancelaJogo();
                            System.out.println("Sair do game");
                            
                        }
                        if(e.getKeyCode() == KeyEvent.VK_S){
-                           controle.concluiu();
+                           //controle.concluiu();
                            System.out.println("Salvar game");
                        }
 			sonic.keyPressed(e);

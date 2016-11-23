@@ -1,4 +1,4 @@
-package modelo;
+package Game_Mario.modelo;
 
 import javax.swing.ImageIcon;
 

@@ -1,4 +1,4 @@
-package modelo;
+package Game_Mario.modelo;
 
 import java.util.Calendar;
 

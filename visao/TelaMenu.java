@@ -1,4 +1,4 @@
-package visao;
+package Game_Mario.visao;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -18,9 +18,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import modelo.Elemento;
-import modelo.Jogador;
-import controle.Controle;
+import Game_Mario.modelo.Elemento;
+import Game_Mario.modelo.Jogador;
+import Game_Mario.controle.Controle;
 
 public class TelaMenu extends JPanel {
 	JButton btNovoJogo;

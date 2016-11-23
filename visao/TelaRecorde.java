@@ -1,4 +1,4 @@
-package visao;
+package Game_Mario.visao;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import modelo.Jogador;
+import Game_Mario.modelo.Jogador;
 
 public class TelaRecorde extends JPanel{
 	JPanel pnPrincipal,pnJogadores;

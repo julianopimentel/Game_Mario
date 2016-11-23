@@ -1,6 +1,6 @@
-package visao;
+package Game_Mario.visao;
 
-import game.Fase;
+import Game_Mario.game.Fase;
 import javax.swing.JFrame;
 
 public class TelaGame extends JFrame { 

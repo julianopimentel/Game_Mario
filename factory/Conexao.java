@@ -1,4 +1,4 @@
-package factory;
+package Game_Mario.factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,14 +1,14 @@
-package controle;
+package Game_Mario.controle;
 
-import visao.TelaGame;
+import Game_Mario.visao.TelaGame;
 import java.util.ArrayList;
-import modelo.DAOJogador;
-import modelo.Jogador;
-import visao.TelaMenu;
-import visao.TelaGame;
-import visao.TelaPrincipal;
-import game.Fase;
-import game.Musica;
+import Game_Mario.modelo.DAOJogador;
+import Game_Mario.modelo.Jogador;
+import Game_Mario.visao.TelaMenu;
+import Game_Mario.visao.TelaGame;
+import Game_Mario.visao.TelaPrincipal;
+import Game_Mario.game.Fase;
+import Game_Mario.game.Musica;
 import javax.swing.Timer;
 
 

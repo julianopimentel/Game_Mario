@@ -1,4 +1,4 @@
-package visao;
+package Game_Mario.visao;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -6,7 +6,7 @@ import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import controle.Controle;
+import Game_Mario.controle.Controle;
 
 public class TelaPrincipal extends JFrame {
 	
