@@ -258,12 +258,10 @@ public class Fase extends JPanel implements ActionListener {
                                 }
                        }
                        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){                                                
-                           //controle.cancelaJogo();
                            System.out.println("Sair do game");
                            
                        }
                        if(e.getKeyCode() == KeyEvent.VK_S){
-                           //controle.concluiu();
                            System.out.println("Salvar game");
                        }
 			sonic.keyPressed(e);

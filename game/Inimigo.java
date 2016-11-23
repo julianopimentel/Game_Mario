@@ -24,11 +24,11 @@ public class Inimigo {
 		
 		ImageIcon referencia;
 		if(contador++ % 3 == 0){
-			referencia = new ImageIcon("src/imagem/laranja.png");
+			referencia = new ImageIcon("src/Game_Mario/imagem/laranja.png");
 			
 		}else{
 			
-			referencia = new ImageIcon("src/imagem/banana.png");
+			referencia = new ImageIcon("src/Game_Mario/imagem/banana.png");
 		}
 		imagem = referencia.getImage();
 		
