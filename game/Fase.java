@@ -23,6 +23,7 @@ import Game_Mario.controle.Controle;
 import java.awt.image.BufferedImage;
 import Game_Mario.visao.TelaGame;
 import Game_Mario.visao.TelaPrincipal;
+import javax.swing.JOptionPane;
 
 public class Fase extends JPanel implements ActionListener {
 
@@ -50,8 +51,20 @@ public class Fase extends JPanel implements ActionListener {
         }
         
         public String getNomeJogador() {
-		return this.nome;
+            return this.nome;
 	}
+        
+        public void setPontuacao(int pontos){
+            this.pontos = pontos;
+        }
+        
+        public int getPontuacao() {
+            return this.pontos;
+	}
+        
+        public void setVidas(int vidas){
+            this.vidas = vidas;
+        }
 
 	public void moveFundo() {
                 if (run == true){
@@ -174,8 +187,11 @@ public class Fase extends JPanel implements ActionListener {
 			if (m.isVisible()) {
 				m.mexer();
 			} else {
+                                
 				misseis.remove(i);;
+                                if(run == true){
                                 pontos -= 10;
+                                 }
 			}
 		}
 
@@ -187,7 +203,9 @@ public class Fase extends JPanel implements ActionListener {
 				in.mexer();
 			} else {
 				inimigos.remove(i);
+                                if(run == true){
                                 pontos += 50;
+                                }
 			}
 		}
 
@@ -257,12 +275,17 @@ public class Fase extends JPanel implements ActionListener {
                                 vidas += 3;
                                 }
                        }
-                       if(e.getKeyCode() == KeyEvent.VK_ESCAPE){                                                
-                           System.out.println("Sair do game");
+                       if(e.getKeyCode() == KeyEvent.VK_S){                                                
+                                JOptionPane.showMessageDialog(null, "Salvado com sucesso!");
+                                setVidas(4);
+                                pontos = 0; 
+                                run = false;
+                                emJogo = false;
                            
                        }
-                       if(e.getKeyCode() == KeyEvent.VK_S){
-                           System.out.println("Salvar game");
+                       if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+                           JOptionPane.showMessageDialog(null, "Jogo fechado!");
+                           System.exit(1);
                        }
 			sonic.keyPressed(e);
 		}
