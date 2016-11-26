@@ -46,16 +46,4 @@ public class Controle {
 		return this.dao.getRecordes();
 	}
 
-	public void concluiu() {
-		if (this.dao.salvaJogador(this.jogo.getJogador())) {
-			this.tlPrincipal.trocaTamanho(780,400);
-			this.tlPrincipal.setPainel(new TelaMenu(this));
-		}
-	}
-	
-	public void cancelaJogo(){
-		this.tlPrincipal.trocaTamanho(780,400);
-		this.tlPrincipal.setPainel(new TelaMenu(this));
-	}
-
 }

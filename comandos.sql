@@ -7,7 +7,7 @@
 */
 *CRIAR DB
 */
-CREATE DATABASE IF NOT EXISTS `apsgame`
+CREATE DATABASE IF NOT EXISTS `jma`
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
@@ -15,7 +15,7 @@ CREATE DATABASE IF NOT EXISTS `apsgame`
 */
 *SELECIONAR O DB
 */
-USE `apsgame`;
+USE `jma`;
 
 
 */
@@ -24,7 +24,7 @@ USE `apsgame`;
 DROP TABLE IF EXISTS `recordes`;
 CREATE TABLE IF NOT EXISTS `recordes`(
   `id` INT UNSIGNED NOT NULL AUTO_INCRIMENT,
-  `nome` VARCHAR(20) COLLATE utf8_general_ci,
+  `jogador` VARCHAR(20) COLLATE utf8_general_ci,
   `pontuacao` INT UNSIGNED NOT NULL,
 PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCRIMENT=1;
@@ -42,7 +42,7 @@ SELECT *
 */
 *INSERIR NA TABELA
 */
-INSERT INT (id, nome, recordes)
+INSERT INT (id, jogador, pontuacao)
   VALUES(NULL, ?, ?);
   
   
@@ -50,7 +50,7 @@ INSERT INT (id, nome, recordes)
 *ATUALIZAR A TABELA
 */
 UPDATE recordes
-  SET nome=`?`, pontuacao=`?`
+  SET jogador=`?`, pontuacao=`?`
   WHERE id=`?`;
   
   

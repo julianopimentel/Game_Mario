@@ -25,7 +25,7 @@ public class Insert{
             
                 Connection con = Conexao.getConexao();
                 
-                String sql = "INSERT INTO recordes(jogador, movimentos) VALUES(?,?)";
+                String sql = "INSERT INTO recordes(jogador, pontuacao) VALUES(?,?)";
                 
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, nome);  

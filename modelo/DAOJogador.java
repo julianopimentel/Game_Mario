@@ -22,12 +22,12 @@ public class DAOJogador {
 
 			Statement stm = con.createStatement();
 			ResultSet rs = stm
-					.executeQuery("SELECT * FROM recordes order by movimentos desc;");
+					.executeQuery("SELECT * FROM recordes order by pontuacao desc;");
 
 			while (rs.next()) {
 				Jogador jogador = new Jogador();
 				jogador.setNome(rs.getString("jogador") + "\t");
-				jogador.setPontuacao(rs.getInt("movimentos"));
+				jogador.setPontuacao(rs.getInt("pontuacao"));
 				jogadores.add(jogador);
 			}
 			rs.close();
@@ -49,7 +49,7 @@ public class DAOJogador {
 
 			Connection con = Conexao.getConexao();
 
-			String sql = "Insert into recordes (jogador,movimentos) values (?,?)";
+			String sql = "Insert into recordes (jogador,pontuacao) values (?,?)";
 			PreparedStatement stm2 = con.prepareStatement(sql);
 
 			stm2.setString(1, jogador.getNome());

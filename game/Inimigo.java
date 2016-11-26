@@ -15,7 +15,7 @@ public class Inimigo {
 	private static final int LARGURA_TELA = 1180;
 	private static final int VELOCIDADE = 1;
 	
-	private static int contador = 0;
+	private static int contador = 1;
 	
 	public Inimigo(int x, int y){
 		
@@ -23,7 +23,7 @@ public class Inimigo {
 		this.y = y;
 		
 		ImageIcon referencia;
-		if(contador++ % 3 == 0){
+		if(contador++ % 3 == 1){
 			referencia = new ImageIcon("src/Game_Mario/imagem/laranja.png");
 			
 		}else{

@@ -28,7 +28,7 @@ import javax.swing.JOptionPane;
 public class Fase extends JPanel implements ActionListener {
 
 	private Image fundo;
-	private Sonic sonic;
+	private Mario sonic;
 	private Timer timer;
 	private boolean emJogo;
 	private List<Inimigo> inimigos;
@@ -36,7 +36,7 @@ public class Fase extends JPanel implements ActionListener {
 	private int fundoy = 00;
 	private int fundo1x = 1250;
 	private int fundo1y = 00;
-	private int FPS = 1;
+	private int FPS = 2;
         public Jogador jogo;
         public String nome ;
         boolean run;
@@ -85,7 +85,7 @@ public class Fase extends JPanel implements ActionListener {
                 
 	}
 
-	private int[][] coordenadas = { { 2380, 400 }, { 2600, 378 }, { 1380, 405 },
+	private int[][] coordenadas = { {10000, 20},{ 2500, 380 }, { 2370, 320 },{ 2380, 400 }, { 2600, 378 }, { 1380, 405 },
 			{ 1780, 425 }, { 1280, 410 }, { 1380, 345 }, { 1200, 350 },
 			{ 1760, 380 }, { 1790, 415 }, { 1980, 320 }, { 1560, 370 },
 			{ 1510, 340 },
@@ -100,7 +100,7 @@ public class Fase extends JPanel implements ActionListener {
 		fundo = referencia.getImage();
                 vidas = 3;
               
-		sonic = new Sonic();
+		sonic = new Mario();
                 Musica a = new Musica();
 
 		emJogo = true;
@@ -143,23 +143,54 @@ public class Fase extends JPanel implements ActionListener {
 				Inimigo in = inimigos.get(i);
 				graficos.drawImage(in.getImagem(), in.getX(), in.getY(), this);
 			}
+                        
+                        
+                        ImageIcon vida= new ImageIcon("src/Game_Mario/imagem/vida1.png");
+                        if(vidas == 3){  
+                        graficos.drawImage(vida.getImage(), 95, 60,null);
+                        graficos.drawImage(vida.getImage(), 120, 60,null);
+                        graficos.drawImage(vida.getImage(), 145, 60,null);
+                        }
+                        
+                        if(vidas == 2){                      
+			graficos.drawImage(vida.getImage(), 95, 60,null);
+                        graficos.drawImage(vida.getImage(), 120, 60,null);
+                        }
+                                                
+                        if(vidas == 1){                      
+			graficos.drawImage(vida.getImage(), 95, 60,null);
+                        }
+                        
 			graficos.setFont(new Font("helvica",Font.BOLD,20));
 			graficos.setColor(Color.BLACK);
-      
-                        graficos.drawString("Player: " + getNomeJogador() , 5, 20);
-			graficos.drawString("Pontuação: "+ pontos, 1000, 20);
-                        graficos.drawString("Inimigos: "+ inimigos.size(), 5, 40);
-                        graficos.drawString("Vidas: "+ vidas, 520, 20);
+                        
+                        
+                        ImageIcon icon= new ImageIcon("src/Game_Mario/imagem/icon.png");
+			graficos.drawImage(icon.getImage(), 1, 1,null);
+                        
+                        graficos.drawString(getNomeJogador() , 95, 30);
+			graficos.drawString(pontos+"p", 95, 50);
+                        
+                        graficos.drawString("Inimigos: "+ inimigos.size() +" *Apenas Teste" , 550, 20);
 			
-		}else{	
+		}
+                else{	
                         graficos.setFont(new Font("helvica",Font.BOLD,20));
+                        
+                        if(vidas >= 2){
                         graficos.drawString("Pontuação: "+ pontos, 350, 360);
-                        graficos.drawString("Inimigos: "+ inimigos.size(), 582, 360);
-                        graficos.drawString("Vidas: "+ vidas, 780, 360);
+                        graficos.drawString("Vidas: "+ vidas + "-1 " , 760, 360);
+                        }
+                        
+                        if(vidas == 1)
+                        {
+                           graficos.drawString("S - Salvar", 560, 560);
+                           graficos.drawString("Salve a sua pontuação de " + pontos + " pontos!" , 400, 400);  
+                        }
                         
                         graficos.drawString("ESC - Sair", 5, 560);
-                        graficos.drawString("C - Continuar", 1060, 560);
-                        graficos.drawString("S - Salvar", 560, 560);
+                        graficos.drawString("C - Continuar", 1045, 560);
+                        
                     
 			ImageIcon fimJogo= new ImageIcon("src/Game_Mario/imagem/game1.png");
 			graficos.drawImage(fimJogo.getImage(), 280, 150,null);
@@ -177,6 +208,7 @@ public class Fase extends JPanel implements ActionListener {
 		if (inimigos.size() == 0) {
 			emJogo = false;
 		}
+                
 
 		List<Missel> misseis = sonic.getMisseis();
 
@@ -262,9 +294,9 @@ public class Fase extends JPanel implements ActionListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
                     
-			if(e.getKeyCode() == KeyEvent.VK_C){
+			if((e.getKeyCode() == KeyEvent.VK_C) && emJogo == false){
 				emJogo = true;
-				sonic = new Sonic();
+				sonic = new Mario();
 				inicializaInimigos();
                                 vidas = vidas - 1;
                                 
@@ -275,17 +307,24 @@ public class Fase extends JPanel implements ActionListener {
                                 vidas += 3;
                                 }
                        }
-                       if(e.getKeyCode() == KeyEvent.VK_S){                                                
+                       if((e.getKeyCode() == KeyEvent.VK_S) && vidas == 1){                                                
                                 JOptionPane.showMessageDialog(null, "Salvado com sucesso!");
                                 setVidas(4);
+                                sonic.setVisible(false);                                
+				emJogo = false;
                                 pontos = 0; 
                                 run = false;
                                 emJogo = false;
                            
                        }
                        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-                           JOptionPane.showMessageDialog(null, "Jogo fechado!");
-                           System.exit(1);
+                                sonic.setVisible(false);                                
+				emJogo = false;
+                                pontos = 0; 
+                                run = false;
+                           JOptionPane.showMessageDialog(null, "Obrigado! :)");
+                              System.exit(0);
+                           
                        }
 			sonic.keyPressed(e);
 		}

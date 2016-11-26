@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import Game_Mario.modelo.Elemento;
 import Game_Mario.modelo.Jogador;
 import Game_Mario.controle.Controle;
 
