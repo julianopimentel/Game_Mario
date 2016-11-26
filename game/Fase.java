@@ -45,6 +45,7 @@ public class Fase extends JPanel implements ActionListener {
         
         
         String musica = "src/Game_Mario/imagem/overworld.mid";
+        String gameover = "src/Game_Mario/imagem/gameover.wav";
                    
         public void setNomeJogador(String jogador){
             this.nome = jogador;
@@ -109,9 +110,14 @@ public class Fase extends JPanel implements ActionListener {
 
 		timer = new Timer(10 / FPS, this);
 		timer.start();
-                a.tocarMusica(musica, 999);
                 
+                if(emJogo == true){
+                a.tocarMusica(musica, 999);
                 }
+                 else
+                a.tocarMusica(gameover, 1);
+                
+        }    
 
 	public void inicializaInimigos() {
 		inimigos = new ArrayList<Inimigo>();
@@ -170,16 +176,27 @@ public class Fase extends JPanel implements ActionListener {
                         
                         graficos.drawString(getNomeJogador() , 95, 30);
 			graficos.drawString(pontos+"p", 95, 50);
-                        
-                        graficos.drawString("Inimigos: "+ inimigos.size() +" *Apenas Teste" , 550, 20);
 			
 		}
                 else{	
                         graficos.setFont(new Font("helvica",Font.BOLD,20));
                         
+                        ImageIcon vida= new ImageIcon("src/Game_Mario/imagem/vida1.png");
+                        if(vidas == 3){                      
+			graficos.drawImage(vida.getImage(), 770, 340,null);
+                        graficos.drawImage(vida.getImage(), 795, 340,null);
+                        }
+                                                
+                        if(vidas == 2){                      
+			graficos.drawImage(vida.getImage(), 770, 340,null);
+                        }
+
+                        
                         if(vidas >= 2){
                         graficos.drawString("Pontuação: "+ pontos, 350, 360);
-                        graficos.drawString("Vidas: "+ vidas + "-1 " , 760, 360);
+                        graficos.drawString("Vidas: ", 700, 360);
+                        graficos.drawString("C - Continuar", 1045, 560);
+                        
                         }
                         
                         if(vidas == 1)
@@ -187,10 +204,10 @@ public class Fase extends JPanel implements ActionListener {
                            graficos.drawString("S - Salvar", 560, 560);
                            graficos.drawString("Salve a sua pontuação de " + pontos + " pontos!" , 400, 400);  
                         }
-                        
+
                         graficos.drawString("ESC - Sair", 5, 560);
-                        graficos.drawString("C - Continuar", 1045, 560);
-                        
+                        graficos.drawString("R - Recomeçar", 860, 560);
+
                     
 			ImageIcon fimJogo= new ImageIcon("src/Game_Mario/imagem/game1.png");
 			graficos.drawImage(fimJogo.getImage(), 280, 150,null);
@@ -306,6 +323,13 @@ public class Fase extends JPanel implements ActionListener {
                                 pontos = 0;
                                 vidas += 3;
                                 }
+                       }
+                        if((e.getKeyCode() == KeyEvent.VK_R) && emJogo == false){
+				emJogo = true;
+				sonic = new Mario();
+				inicializaInimigos();
+                                vidas = 3;
+ 
                        }
                        if((e.getKeyCode() == KeyEvent.VK_S) && vidas == 1){                                                
                                 JOptionPane.showMessageDialog(null, "Salvado com sucesso!");

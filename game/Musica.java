@@ -31,5 +31,6 @@ public class Musica {
             System.out.println("Erro ao tocar: "+nome);
         }
         }
+        }
     
-}
+

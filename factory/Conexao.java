@@ -14,7 +14,7 @@ public class Conexao {
 
 		final String driver = "com.mysql.jdbc.Driver";
 		final String banco = "jma";
-		final String url = "jdbc:mysql://192.168.100.4:3309/" + banco;
+		final String url = "jdbc:mysql://localhost:3309/" + banco;
 		final String login = "usuario";
 		final String senha = "senha";
 
